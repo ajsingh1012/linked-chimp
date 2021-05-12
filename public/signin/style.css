@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: auto;
+    max-width: 60rem;
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#main {
+    padding-left: var(--bs-gutter-x,.75rem);
+    padding-right: var(--bs-gutter-x,.75rem);
+    width: 100%;
+    margin: auto;
+}

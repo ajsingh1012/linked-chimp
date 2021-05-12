@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinkedChimp: Sign in</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons-chimp/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons-chimp/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons-chimp/favicon-16x16.png">
+    <link rel="manifest" href="../favicons-chimp/site.webmanifest">
+
+    <!-- include bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    >
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- include firebase -->
+    <script defer src="/__/firebase/8.5.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- include copyright -->
+    <script src="../copyright.js"></script>
+
+    <!-- include scripting -->
+    <script src="signin/google-signin.js"></script>
+
+    <!-- include styling -->
+    <link rel="stylesheet" href="signin/style.css">
+  </head>
+  <body class="text-center bg-light">
+    <div id="main">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <h4 class="text-primary" href="index.html">LinkedChimp</h4>
+        <button class="btn btn-primary btn-rounded" id="google-sign-in">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+            </svg>
+            &nbsp;
+            Sign in with Google
+        </button>
+      </div>
+      <footer class="pt-3 mt-4 text-muted border-top">
+        <p>
+          Please note: This website is for satirical and humour purposes only.
+          <br>
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+          </a>
+          <small>
+            This work is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

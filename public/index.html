@@ -1,89 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>LinkedChimp: Join the Monkie Revolution</title>
 
-    <!-- update the version number as needed -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons-chimp/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons-chimp/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons-chimp/favicon-16x16.png">
+    <link rel="manifest" href="favicons-chimp/site.webmanifest">
+
+    <!-- include bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    >
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- include firebase -->
     <script defer src="/__/firebase/8.5.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/8.5.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-database.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-firestore.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-storage.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-analytics.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-remote-config.js"></script>
     <script defer src="/__/firebase/8.5.0/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script defer src="/__/firebase/init.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <!-- include copyright -->
+    <script src="copyright.js"></script>
+
+    <!-- include styling -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- include advertising -->
+    <script data-ad-client="ca-pub-4618622868695141" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand text-primary" href="index.html">LinkedChimp</a>
+        <div class="d-flex">
+          <a class="btn btn-outline-primary" href="signin/index.html">Sign in</a>
+        </div>
+      </div>
+    </nav>
+    <div id="main">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold text-primary">Welcome, Comrade.</h1>
+          <p>
+            Over many thousands of years, humanity has built a society that is restrictive and coercive.
+            What was called 'progress' and 'civilization' was in reality the subversion of what defines a human.
+            Join LinkedChimp, the only social networking website for those with common sense.
+          </p>
+          <h4 class="text-primary">
+            Join the revolution.
+          </h4>
+          <a class="btn btn-primary" href="signin/index.html">Join now.</a>
+        </div>
+      </div>
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-primary rounded-3">
+            <h2>Make a profile</h2>
+            <p>
+              Nothing says you care about the revolution more than a personal profile page.
+              As we believe we should live as nature intended, as monkeys, try our profile-builder, and make one today!
+            </p>
+            <a class="btn btn-outline-light" href="profile/index.html">Profile me!</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Join the conversation</h2>
+            <p>Or, come talk in our open forum about the revolution! All thoughts are welcome, so long as they are ideologically correct.</p>
+            <a class="btn btn-outline-secondary" href="messaging/index.html">Let's talk!</a>
+          </div>
+        </div>
+      </div>
+      <footer class="pt-3 mt-4 text-muted border-top">
+        <p>
+          Please note: This website is for satirical and humour purposes only.
+          <br>
+          The premise is the philosophy of <a href="https://en.wikipedia.org/wiki/Anarcho-primitivism">anarcho-primitivism</a>.
+          <br>
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+          </a>
+          <small>
+            This work is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+          </small>
+        </p>
+      </footer>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
   </body>
 </html>
