@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LinkedChimp: My Home</title>
+    <title>Chat Window</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../favicons-chimp/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicons-chimp/favicon-32x32.png">
@@ -39,10 +39,10 @@
     <script src="../copyright.js"></script>
 
     <!-- include scripting -->
-    <script src="home/index.js"></script>
+    <script src="messaging/signin.js"></script>
 
     <!-- include styling -->
-    <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="messaging/messaging.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -69,13 +69,13 @@
           <div class="collapse navbar-collapse multi-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="../home/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../profile/setup.html">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../messaging/index.html">Messaging</a>
+                <a class="nav-link active" aria-current="page" href="#">Messaging</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,6 +92,22 @@
         </div>
       </div>
     </nav>
-    
+    <header>
+      <h2>Firebase RealTime Chat</h2>
+    </header>
+
+    <div id="chat">
+      <!-- messages will display here -->
+      <ul id="messages"></ul>
+
+      <!-- form to send message -->
+      <form id="message-form">
+        <input id="message-input" type="text" style="width: 70%; height: 30px;" />
+        <button id="message-btn" type="submit" style="width: 25%; height: 38px;">Send</button>
+      </form>
+    </div>
+
+    <!-- include scripting -->
+    <script src="messaging/messaging.js"></script>
   </body>
 </html>

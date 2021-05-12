@@ -1,0 +1,57 @@
+/*o.v.*/
+
+#image-dropdown {
+  /*style the "box" in its minimzed state*/
+  border: 1px solid black;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  /*animate collapsing the dropdown from open to closed state (v. fast)*/
+  -moz-transition: height 0.1s;
+  -webkit-transition: height 0.1s;
+  -ms-transition: height 0.1s;
+  -o-transition: height 0.1s;
+  transition: height 0.1s;
+}
+
+#image-dropdown:hover {
+  /*when expanded, the dropdown will get native means of scrolling*/
+  height: 200px;
+  overflow-y: scroll;
+  /*nice and smooth expand - speed this up at your preference or remove animation altogether*/
+  -moz-transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+#image-dropdown input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+
+#image-dropdown label {
+  display: none;
+  margin: 2px;
+  height: 100px;
+  opacity: 0.2;
+}
+
+#image-dropdown:hover label {
+  /*this is how labels render in the "expanded" state. we want to see only the selected radio button in the collapsed menu, and all of them when expanded*/
+  display: inline-block;
+}
+
+#image-dropdown label:hover {
+  opacity: 0.5;
+}
+
+#image-dropdown input:checked+label {
+  /*tricky! labels immediately following a checked radio button (with our markup they are semantically related) should be fully opaque regardless of hover, and they should always be visible (i.e. even in the collapsed menu*/
+  opacity: 1 !important;
+  display: inline-block;
+}

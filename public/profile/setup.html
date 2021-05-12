@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LinkedChimp: My Home</title>
+    <title>LinkedChimp: My Profile</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../favicons-chimp/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicons-chimp/favicon-32x32.png">
@@ -22,6 +22,11 @@
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- include firebase -->
     <script defer src="/__/firebase/8.5.0/firebase-app.js"></script>
@@ -38,11 +43,13 @@
     <!-- include copyright -->
     <script src="../copyright.js"></script>
 
-    <!-- include scripting -->
-    <script src="home/index.js"></script>
-
     <!-- include styling -->
-    <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="../profile/style.css">
+    <link rel="stylesheet" href="../profile/setup.css">
+
+    <!-- include scripting -->
+    <script src="../profile/index.js"></script>
+    <script src="../profile/setup.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -58,7 +65,7 @@
           style="margin-bottom: 10px;">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-primary" href="index.html">LinkedChimp</a>
+        <a class="navbar-brand text-primary" href="../index.html">LinkedChimp</a>
         <div class="collapse navbar-collapse multi-collapse" id="navbarNavSearch">
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search profiles" aria-label="Search">
@@ -69,10 +76,10 @@
           <div class="collapse navbar-collapse multi-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="../home/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../profile/setup.html">Profile</a>
+                <a class="nav-link active" aria-current="page" href="#">Profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../messaging/index.html">Messaging</a>
@@ -92,6 +99,73 @@
         </div>
       </div>
     </nav>
+
+    <div class="col-md-7 col-lg-8" id="main">
+        <h4 class="mb-3">Profile editor</h4>
+        <form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-12">
+                    <input type="text" value="" id="trace" hidden/>
+                    <p>Select a profile picture from below:</p>
+                    <div id="image-dropdown" style="width: 100%;" >
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" id="username" placeholder="username" required>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                </div>
+
+                <div class="col-12">
+                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+
+                <div class="col-md-5">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required="">
+                    <option value="">Choose...</option>
+                    <option>United States</option>
+                </select>
+                </div>
+
+                <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select class="form-select" id="state" required="">
+                    <option value="">Choose...</option>
+                    <option>California</option>
+                </select>
+                </div>
+
+                <div class="col-md-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required="">
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Update profile</button>
+        </form>
+      </div>
     
   </body>
 </html>
