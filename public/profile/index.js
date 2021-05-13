@@ -7,7 +7,8 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            //window.location.href = 'home/index.html';
+            document.getElementById('profile-form').auth = user.uid;
+            loaded2 = true;
         } else {
             // User is signed out.
             window.location.replace('../index.html');
