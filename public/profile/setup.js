@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var data = imageRef.name.replace('.jpg', '');
             attribute.innerHTML = data;
             document.getElementById('image-dropdown').innerHTML += '<input type="radio" id="line' + i.toString() + '" name="line-style" value="' + i.toString() + '" > \
-            <label for="label' + i.toString() + '"> \
+            <label for="line' + i.toString() + '"> \
             <img id="img' + i.toString() + '" style="width: 100px; height: 100px;"></img> \
             </label>';
             displayContent(imageRef, i);
@@ -71,7 +71,12 @@ function displayContent(imageRef, i) {
 }
 
 var isLoaded = false, done = false;
-var interval = setInterval(
+var i = setInterval(() => {
+    updateTrace();
+    $("#trace").val($("input[name=line-style]:checked").val());
+}, 100);
+
+var j = setInterval(
     function(){
         var loaded4 = true;
         
@@ -90,10 +95,9 @@ var interval = setInterval(
             if(images.length == 2 * counter) {
                 loadData();
                 done = true;
+                clearInterval(j);
             }
         }
-        updateTrace();
-        $("#trace").val($("input[name=line-style]:checked").val());
     },
     100
 );
@@ -161,7 +165,7 @@ function loadData() {
             document.querySelector('#firstName').value = data.firstName;
             document.querySelector('#lastName').value = data.lastName;
             document.querySelector('#city').value = data.location;
-            document.querySelector('#statement').value = data.statement;
+            document.querySelector('#statement').value = data.statement.replace(/\\/gi, '\n');
             
             var picURL = data.profileURL;
             var children = document.getElementById('image-dropdown').children;
@@ -189,6 +193,7 @@ function submitData(e) {
     let profilePic = document.getElementById('img' + document.querySelector('#trace').value).src;
     let location = document.querySelector('#city').value;
     let statement = document.querySelector('#statement').value;
+    statement = statement.split('\n').join('\\')
 
     let authId = document.querySelector('#profile-form').auth;
 
@@ -205,6 +210,9 @@ function submitData(e) {
         } else {
             console.log("New user");
         }
+        firebase.database().ref('usernames/' + username).set({
+            username
+        });
     }).catch((error) => {
         console.error(error);
     });
@@ -218,8 +226,6 @@ function submitData(e) {
         statement: statement
     });
 
-    firebase.database().ref('usernames/' + username).set({
-        username
-    });
+    
 
 }

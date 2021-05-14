@@ -8,6 +8,7 @@ function initApp() {
         if (user) {
             // User is signed in.
             document.getElementById('profile-form').auth = user.uid;
+            document.getElementById('prev').href = "../profile/index.html?id=" + user.uid;
             loaded2 = true;
         } else {
             // User is signed out.

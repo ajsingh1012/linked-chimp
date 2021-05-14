@@ -100,8 +100,9 @@
       </div>
     </nav>
 
-    <div class="col-md-7 col-lg-8" id="main">
-        <h4 class="mb-3">Profile editor</h4>
+    <div class="row g-5 bg-light" style="margin: auto; padding: inherit;">
+      <div class="col-md-7 col-lg-8" id="main">
+        <h1 class="mb-3">Profile editor</h1>
         <form class="row g-3" id="profile-form" action="" method="POST">
           <div class="col-12">
             <label for="username" class="form-label">Username (must be unique!)</label>
@@ -197,9 +198,14 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Save profile</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Update profile</button>
         </form>
       </div>
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h5>Preview profile</h5>
+        <a id="prev" class="btn btn-primary text-center rounded-pill" style="width:100%;">View my profile!</a>
+      </div>
+    </div>
     
   </body>
 </html>
