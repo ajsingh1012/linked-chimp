@@ -3,3 +3,46 @@ body {
     max-width: 60rem;
     padding: 0 2rem 2rem 2rem;
 }
+
+
+/* Note: The CSS below is borrowed from https://getbootstrap.com/docs/5.0/examples/features/features.css in order to make the design work. */
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+  
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: .75rem;
+}
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+.icon-link > .bi {
+    margin-top: .125rem;
+    margin-left: .125rem;
+    transition: transform .25s ease-in-out;
+    fill: currentColor;
+}
+.icon-link:hover > .bi {
+    transform: translate(.25rem);
+}
+
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+}

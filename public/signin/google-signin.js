@@ -33,7 +33,15 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            window.location.replace('home/index.html');
+            params = getParams();
+            service = params["serv"];
+            var newURL = '';
+            switch(service) {
+              case 'profile': newURL = '../profile/setup.html'; break;
+              case 'messaging': newURL = '../messaging/index.html'; break;
+              default: newURL = '../home/index.html'; break;
+            }
+            window.location.replace(newURL);
         } else {
             // User is signed out.
             //document.getElementById('google-sign-in').innerHTML = 'Sign in with Google';
@@ -41,6 +49,19 @@ function initApp() {
         document.getElementById('google-sign-in').disabled = false;
     });
     document.getElementById('google-sign-in').addEventListener('click', toggleSignIn, false);
+}
+
+function getParams() {
+  var idx = document.URL.indexOf('?');
+  var params = {};
+  if (idx != -1) {
+      var pairs = document.URL.substring(idx + 1, document.URL.length).split('&');
+      for (var i = 0; i < pairs.length; i++) {
+          nameVal = pairs[i].split('=');
+          params[nameVal[0]] = nameVal[1];
+      }
+  }
+  return params;
 }
 
 window.onload = function() {
