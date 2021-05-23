@@ -40,6 +40,13 @@
 
     <!-- include scripting -->
     <script src="../profile/retrieve.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
     <!-- include styling -->
     <link rel="stylesheet" href="../profile/style.css">
@@ -91,13 +98,27 @@
         <!-- Left Column -->
         <div class="col-sm-4">
           <!-- Profile -->
-          <div class="card round">
+          <div class="card round" style="margin: 10px;">
             <div class="container" style="margin: 10px auto;">
               <h4 class="text-center" id="username"></h4>
               <p style="text-align: center !important;"><img id="profile-picture" class="rounded-circle" style="height:100px;width:100px"></p>
               <small id="name"></small>
               <hr>
               <p id="city"></p>
+            </div>
+          </div>
+
+          <div class="card round" style="margin: 10px;">
+            <div class="container" style="margin: 10px auto;">
+              <h6>Share this page!</h6>
+              <div id="qrcode" style="width: 50%; height: 50%; margin: 10px;"></div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Copy to Clipboard" aria-describedby="copy-btn" id="copy" readonly>
+                <button class="btn btn-outline-secondary" type="button" id="copy-btn" data-clipboard-target="#copy">
+                  <img src="../profile/clippy.svg" alt="Copy to clipboard" width="13">
+                </button>
+              </div>
             </div>
           </div>
         <!-- End Left Column -->
@@ -108,7 +129,7 @@
         
           <div style="padding: 0 8px;">
             <div style="width: 100%; float: left;">
-              <div class="card round">
+              <div class="card round" style="margin: 10px;">
                 <div class="container" style="margin: 10px auto; padding: 8px 16px !important;">
                   <h6 style="color: #198754">My ideological imperative</h6>
                   <p id="statement"></p>

@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
             var msg = data.statement;
             msg = msg.replace(/\\/gi, '<br>');
             document.querySelector('#statement').innerHTML = msg;
+
+            qrc = new QRCode(document.getElementById("qrcode"), {
+                text: document.URL,
+                width: 128,
+                height: 128,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            new ClipboardJS(document.getElementById('copy-btn'));
+            document.getElementById('copy').value = document.URL;
         } else {
             console.log("No data available for current user");
         }
